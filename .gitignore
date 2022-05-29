@@ -7,8 +7,6 @@ __pycache__/
 *.so
 
 # Tests
-*.csv
-acoes.csv
 
 # Distribution / packaging
 .Python
