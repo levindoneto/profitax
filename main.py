@@ -62,10 +62,13 @@ def read_csv(file_name):
     return rows
 
 def create_profits_summary_file(profits):
+    total_value = 0 # redimentos isentos e nao tributaveis, codigo 20
     profits_file = open("output/profits_summary.csv", "w")
     profits_file.write("Mes,Lucro\n")
     for key, value in profits.items():
+        total_value += value
         profits_file.write("%s,R$%.2f\n" % (get_month(key), round(value, 2)))
+    print("Total: ", total_value)
     profits_file.close()
 
 def calculate_monthly_taxes(stocks_stock_previus, stocks_current_year):
